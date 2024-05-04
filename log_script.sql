@@ -1,0 +1,9 @@
+USE logsdb;
+
+CREATE TABLE user (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, userName VARCHAR(20)
+);
+
+CREATE TABLE logs (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL, date VARCHAR(15), note VARCHAR(500), id_user INT, Foreign Key (id_user) REFERENCES user (id)
+);

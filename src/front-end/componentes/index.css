@@ -1,0 +1,92 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.formAct{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.inputForm{
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.buttonForm{
+  margin: 5px;
+}
+
+.username {
+  display: flex;
+  justify-content: flex-start;
+  color: aqua;
+}
+
+.buttonLogs{
+  background-color: transparent;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  border-radius: 5px;
+  border: 0.3px solid white;
+  opacity: 0.5;
+  margin-top: 10px;
+}
+
+.nav:hover{
+  opacity: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container-logs{
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 0.3px solid aqua;
+  opacity: 0.5;
+  padding: 5px;
+}
+
+.container-logs:hover{
+  border-radius: 5px;
+  border: 0.3px solid rgb(250, 252, 252);
+  opacity: 1;
+ 
+}
+
+
+.note{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.textArea{
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin: 10px;
+}

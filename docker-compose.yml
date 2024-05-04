@@ -1,0 +1,36 @@
+version: '3'
+services:
+  app:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    container_name: logs
+    restart: always
+    ports:
+      - '4000:3000'
+    volumes:
+      - ./:/app
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_HOST: db
+      MYSQL_PORT: 3306
+
+  db:
+    image: mysql:latest
+    restart: always
+    container_name: log_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: logsdb
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
+      timeout: 10s
+      retries: 3
+    ports:
+      - '3355:3306'
+    volumes:
+      - ./log_script.sql:/docker-entrypoint-initdb-d/log_script.sql
