@@ -41,11 +41,19 @@ const addUser = async (req, res) => {
     .json(newLog.data);
 }
 
+const delNote = async (req, res) => {
+  const { noteId, id_user }= req.params;
+  const newLog = await service.delNote(noteId, id_user);
+  return res.status(mapStatus(newLog.status))
+    .json(newLog.data);
+}
+
 export default {
   findLog,
   addLog,
   addUser,
   findUser,
   findUserName,
-  findLogById
+  findLogById,
+  delNote
 };

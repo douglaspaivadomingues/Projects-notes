@@ -38,9 +38,9 @@ const addUser = async (user) => {
   return newLog;
 };
 
-const delLog = async (id) => {
+const delNote = async (noteId, id_user) => {
   const result = await connection
-    .execute(`DELETE FROM logs where id = ?`, [id])
+    .execute(`DELETE FROM logs where id = ? AND id_user = ?`, [noteId, id_user]);
   return result;
 }
 
@@ -54,7 +54,7 @@ export default {
   findLog,
   findLogById,
   update,
-  delLog,
+  delNote,
   addLog,
   addUser,
   findUser,

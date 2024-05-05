@@ -103,11 +103,28 @@ const addUser = async (user) => {
    }
 }
 
+const delNote = async (noteId, id_user) => {
+  try {
+    const [result] = await model.delNote(noteId, id_user);
+    if (result) {
+      return {
+        status: 'SUCCESS',
+        data: { message: `Success ${noteId} deleted` }
+      }
+    }
+  } catch (error) {
+    return { 
+      status: 'INTERNAL_SERVER_ERROR', 
+      data: { message: 'Falha na requisição' }}
+   }
+}
+
 export default {
   findLog,
   addLog,
   addUser,
   findUser,
   findUserName,
-  findLogById
+  findLogById,
+  delNote
 };
